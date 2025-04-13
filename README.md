@@ -21,6 +21,8 @@ With the help of Jenkinsfile, we are performing below steps.
 Below are the source code repository and manifest repo details: 
 
 app source code repo : https://github.com/khajaehtesham/jenkins-eks-springboot-app.git
+
+
 manifest repo :  https://github.com/khajaehtesham/cicd-k8s-manifests.git
 
 **Once the changes are pushed to release branch, we can then raise a PR to get it merged to main branch.**
