@@ -17,6 +17,7 @@ With the help of Jenkinsfile, we are performing below steps.
 6. Update the manifest file with latest image tag and image repository in values file of each environment
 7. Push the changes to the manifest repo, these changes would be pushed to release branch. 
 
+**You can include the security related steps which i have excluded from the pipeline, such as sonarqube scan and trivy scan**
 
 Below are the source code repository and manifest repo details: 
 
