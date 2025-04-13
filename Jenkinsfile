@@ -82,6 +82,7 @@ pipeline {
                 
 
                 // Update the values.yaml file using sed.  Safer and more readable.
+                sh "ls -al"
                 sh "sed -i 's#repository: .*#repository: ${newImageRepository}#' helmcharts/java-app/environments/dev/values.yaml"
                 sh "sed -i 's#tag: .*#tag: ${newImageTag}#' helmcharts/java-app/environments/dev/values.yaml"
 
