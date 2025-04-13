@@ -27,9 +27,9 @@ pipeline {
                withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-production-creds', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                 script{
                     sh '''
-                    aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 1234567890.dkr.ecr.us-east-1.amazonaws.com
+                    aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 210613553230.dkr.ecr.us-east-1.amazonaws.com
                     docker build -t eks-demo .    
-                    docker tag eks-demo:latest 1234567890.dkr.ecr.us-east-1.amazonaws.com/eks-demo:${BUILD_NUMBER}
+                    docker tag eks-demo:latest 210613553230.dkr.ecr.us-east-1.amazonaws.com/eks-demo:${BUILD_NUMBER}
                     '''
                 }
             }
@@ -44,7 +44,7 @@ pipeline {
                 script{
                     sh '''
                     echo 'Pushing Docker Image'
-                    docker push 1234567890.dkr.ecr.us-east-1.amazonaws.com/eks-demo:${BUILD_NUMBER}
+                    docker push 210613553230.dkr.ecr.us-east-1.amazonaws.com/eks-demo:${BUILD_NUMBER}
                     '''
                 }
             }
@@ -64,7 +64,7 @@ pipeline {
                 def gitRepoUrl = 'https://github.com/khajaehtesham/cicd-k8s-manifests.git'
                 def commitMessage = "Update image tag to ${env.BUILD_NUMBER}" // Improved message
                 def targetBranch = "release-branch"
-                def newImageRepository = "1234567890.dkr.ecr.us-east-1.amazonaws.com/eks-demo"
+                def newImageRepository = "210613553230.dkr.ecr.us-east-1.amazonaws.com/eks-demo"
                 def newImageTag = env.BUILD_NUMBER
 
                 echo "Updating image to ${newImageRepository}:${newImageTag} in values.yaml"
@@ -104,4 +104,3 @@ pipeline {
     }
 
     }
-
