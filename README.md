@@ -1,6 +1,8 @@
 # jenkins-eks-springboot-app
 
+Pre-requsites: 
 
+  Install aws cli on jenkins server and configure it with your credentials. it would be helpful to connect to ecr repo for pushing the containerized images.
 
 This repo is used for building the java application using maven and containerizing the application. 
 
