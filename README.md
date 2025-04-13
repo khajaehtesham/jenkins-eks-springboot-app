@@ -3,6 +3,7 @@
 **Pre-requsites:**
 
   Install aws cli on jenkins server and configure it with your credentials. it would be helpful to connect to ecr repo for pushing the containerized images.
+  Create ECR repo, and update the Account ID and ecr repo in the JenkinsFile accordingly.
 
 This repo is used for building the java application using maven and containerizing the application. 
 
