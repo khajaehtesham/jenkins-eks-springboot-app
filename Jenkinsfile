@@ -79,13 +79,14 @@ pipeline {
                 } catch (Exception e) {
                     sh "git checkout -b ${targetBranch}"
                 }
+                
 
                 // Update the values.yaml file using sed.  Safer and more readable.
-                sh "sed -i 's#repository: .*#repository: ${newImageRepository}#' helmcharts/java-app/values.yaml"
-                sh "sed -i 's#tag: .*#tag: ${newImageTag}#' helmcharts/java-app/values.yaml"
+                sh "sed -i 's#repository: .*#repository: ${newImageRepository}#' helmcharts/java-app/environments/dev/values.yaml"
+                sh "sed -i 's#tag: .*#tag: ${newImageTag}#' helmcharts/java-app/environments/dev/values.yaml"
 
                 // Verify the change
-                sh "cat helmcharts/java-app/values.yaml"
+                sh "cat helmcharts/java-app/environments/dev/values.yaml"
 
                 // Add, commit, and push
                 sh "git add helmcharts/java-app/values.yaml"
