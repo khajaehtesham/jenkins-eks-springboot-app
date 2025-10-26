@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class SpringbootApplication {
+public class MyAwesomeSpringBootAngularJsApp {
 
 	@GetMapping("/welcome")
     public String welcome(){
