@@ -1,12 +1,20 @@
-package com.tcs.angularjs;
+package com.docker.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-public class MyAwesomeSpringBootAngularJsApp {
+@RestController
+public class SpringbootApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(MyAwesomeSpringBootAngularJsApp.class, args);
-    }
+	@GetMapping("/welcome")
+    public String welcome(){
+		return "This is Springboot Application created by Khaja Ehteshamuddin Ahmed Devops team";
+	}
+	public static void main(String[] args) {
+		SpringApplication.run(SpringbootApplication.class, args);
+	}
+
 }
